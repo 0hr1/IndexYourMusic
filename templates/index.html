@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Your Music</title>
+    <style>
+        .sort-options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sort-option input[type="checkbox"] {
+            margin-right: 10px; 
+        }
+
+        .sort-option {
+            margin-bottom: 5px;
+        }
+
+        .genre-input,
+        .description-input {
+            margin-left: 10px; 
+            width: 250px; 
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Index Your Music</h1>
+    <ul class="sort-options">
+        <li>
+            <label>
+                <input type="radio" class="sort-option" name="sort-type" value="rym-rating"> Rym Rating
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="radio" class="sort-option" name="sort-type" value="user-rating" checked> User Rating
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" class="sort-option" value="description"> Description
+                <input type="text" class="description-input" placeholder="Descriptions (seperated by commas)">
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" class="sort-option" value="genre"> Genres
+                <input type="text" class="genre-input" placeholder="Genres (seperated by commas)">
+            </label>
+        </li>
+        <!-- Add more checkboxes for additional sorting options as needed -->
+    </ul>
+
+    <button id="sort-button">Sort Releases</button>
+
+    <div id="sorted-data"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
